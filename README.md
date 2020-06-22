@@ -16,22 +16,30 @@ client basically is workin on 8080 port, server - 3300
 ### Installing || Установка
 * With make file || С помощью make файла:
 
-Запускаем из корня приложения (Run commands from root directory of the project):
+##### Запускаем из корня приложения (Run commands from root directory of the project):
 
-make build - install all deps || установить сразу все зависимости
-make run/server
-make run/client
+* make build - install all deps || установить сразу все зависимости
 
-* Natively || Нативно:
-cd /server
-npm install
-npm run server
+* make run/server
 
-cd /client 
-npm install
-npm run serve
+* make run/client
+
+##### Natively || Нативно:
+
+* cd /server
+
+* npm install
+
+* npm run server
+
+* cd /client 
+
+* npm install
+
+* npm run serve
  
-Examples || примеры
+#### Screenshots
+
 * ![alt text](screenshots/task-sockets.png "Таблица, изменив в которой данные, мы запустим синхронизацию их с другой таблице через сокеты")
 
 
