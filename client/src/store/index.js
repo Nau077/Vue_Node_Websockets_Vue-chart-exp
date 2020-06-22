@@ -27,7 +27,6 @@ export default new Vuex.Store({
       commit('SET_DATA_CHART', data);
    },
     dataChange({ commit }, payload ) {
-      console.log(payload)
         this._vm.$socket.client.emit('dataTableChange', payload)
    }
   }
