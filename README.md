@@ -1,7 +1,7 @@
 # Vue-Node.js-Websockets (vue-socket)- vue-chart app
 
-* Little project with technologies which you can read above which show, how simple is to work with websockets and charts using vue.js and node
-* Небольшой проект, на технологиях описанных в названии, который показывает, как просто на vue и node.js работать с websockets и графиками
+* Little project with technologies which you can read above which show, how simple is working with websockets and charts using vue.js and node.
+* Небольшой проект, на технологиях описанных в названии, который показывает, как просто на vue и node.js работать с websockets и графиками.
 
 ## Prerequisites || Необходимые условия
 Убедитесь, что у вас установлен node.js 
@@ -10,7 +10,7 @@ https://nodejs.org/en/
 
 Make sure that needed ports are free || Убедитесь, что свободны требуемые порты
 
-client basically is workin on 8080 port, server - 3300
+client basically works at 8080 port, server - 3300
 клиент базисно работает на 8080 порту, сервер 3300 порт
 
 ### Installing || Установка
