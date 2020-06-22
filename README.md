@@ -32,6 +32,10 @@ npm install
 npm run serve
  
 Examples || примеры
-![alt text](screenshots/task-sockets.png "Таблица, изменив в которой данные, мы запустим синхронизацию их с другой таблице через сокеты")
-![alt text](screenshots/socket-chart.png "Отрисовка разных графиков во vue")
-![alt text](screenshots/socket-state.png "Хранение данных с web-sockets внутри vuex")
+* ![alt text](screenshots/task-sockets.png "Таблица, изменив в которой данные, мы запустим синхронизацию их с другой таблице через сокеты")
+
+
+* ![alt text](screenshots/socket-chart.png "Отрисовка разных графиков во vue")
+
+
+* ![alt text](screenshots/socket-state.png "Хранение данных с web-sockets внутри vuex")
