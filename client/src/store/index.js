@@ -19,15 +19,15 @@ export default new Vuex.Store({
     }
   },
   actions: { 
-    socket_setDataTable ({ commit }, data) {
-       commit('SET_DATA_TABLE', data);
+    // socket_setDataTable ({ commit }, data) {
+    //    commit('SET_DATA_TABLE', data);
  
-    },
+    // },
     socket_setDataChart ({ commit }, data) {
       commit('SET_DATA_CHART', data);
    },
     dataChange({ commit }, payload ) {
-        this._vm.$socket.client.emit('dataTableChange', payload)
+        this._vm.$socket.emit('dataTableChange', payload)
    }
   }
 })

@@ -20,7 +20,7 @@
 			</v-card-text>
 			</v-card>
 		</template>
-		<v-simple-table v-if="tableData.length && $store.state.dataTable" class="simple-border">
+		<v-simple-table v-if="dataTable.length" class="simple-border">
 			<template v-slot:default>
 			<thead>
 				<tr>
@@ -32,7 +32,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for="item in $store.state.dataTable.flat()" :key="item.name">
+				<tr v-for="item in dataTable.flat()" :key="item.name">
 				<td class="text-start">{{ item.name }}</td>
 				<td class="text-start">{{ item.calories }}</td>
 				<td class="text-start">{{ item.carbs }}</td>
@@ -54,6 +54,11 @@ export default {
   components: {
     Todo
   },
+  data() {
+	  return {
+		dataTable: []
+	  }
+  },
   computed: {
     tableData() {
       const data = this.$store.state.dataTable
@@ -61,6 +66,14 @@ export default {
         .map(item => ({ ...item }));
       return data;
     }
+  },
+  created() {
+	  this.$socket.emit('getData')
+  },
+  mounted() {
+    this.$socket.on('setDataTable', (data => {
+       this.dataTable = data
+    }))
   },
   methods: {
     sendSocket(data) {

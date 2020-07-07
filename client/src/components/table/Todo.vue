@@ -75,7 +75,8 @@ export default {
         { text: "Protein (g)", value: "protein" },
         { text: "Actions", value: "actions", sortable: false }
       ],
-      desserts: JSON.parse(JSON.stringify(this.tableData)),
+      // desserts: JSON.parse(JSON.stringify(this.tableData)),
+       desserts: [],
       editedIndex: -1,
       editedItem: {
         name: "",
@@ -93,7 +94,14 @@ export default {
       }
     };
   },
-
+  mounted() {
+    this.$socket.on('setDataTable', (data => {
+       this.desserts = data
+    }))
+  },
+  beforeDestroy() {
+    this.$socket.off('setDataTable')
+  },
   computed: {
     formTitle() {
       return this.editedIndex === -1 ? "New Item" : "Edit Item";
@@ -104,14 +112,6 @@ export default {
     dialog(val) {
       val || this.close();
     },
-    tableData: {
-      // the callback will be called immediately after the start of the observation
-      immediate: true,
-      // eslint-disable-next-line
-      handler(val, oldVal) {
-        this.initialize();
-      }
-    }
   },
   methods: {
     initialize() {
@@ -131,13 +131,13 @@ export default {
         this.editedIndex = -1;
       });
     },
-
     save() {
       if (this.editedIndex > -1) {
         Object.assign(this.desserts[this.editedIndex], this.editedItem);
       } else {
         this.desserts.push(this.editedItem);
       }
+
       this.$emit("sendSocket", this.desserts);
       this.close();
     }

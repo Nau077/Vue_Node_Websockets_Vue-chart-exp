@@ -8,6 +8,7 @@ import store from './store'
 
 const socket = io('http://localhost:3300');
 Vue.use(VueSocketIOExt, socket, { store });
+Vue.prototype.$socket = io('http://localhost:3300').connect()
 
 Vue.config.productionTip = false
 new Vue({

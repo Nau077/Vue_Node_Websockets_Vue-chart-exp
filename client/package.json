@@ -48,7 +48,8 @@
     },
     "rules": {
       "vue/no-parsing-error": 0,
-      "no-unused-vars": 0
+      "no-unused-vars": 0,
+      "no-mixed-spaces-and-tab": "off"
     }
   },
   "browserslist": [

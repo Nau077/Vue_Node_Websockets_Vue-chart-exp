@@ -51,6 +51,9 @@ io.on('connection', socket => {
         dataTable = msg.data
         io.emit('setDataTable', dataTable );
       })
+    socket.on('getData', () => {
+        io.emit('setDataTable', dataTable)
+    })
 })
 
     app.use(cors())
